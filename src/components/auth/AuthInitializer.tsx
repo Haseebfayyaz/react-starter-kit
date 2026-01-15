@@ -26,6 +26,7 @@ const AuthInitializer = () => {
           dispatch(setUser(user));
         } catch (error) {
           // If fetching user fails, clear token and auth state
+          console.error(error);
           localStorage.removeItem('token');
           dispatch(clearUser());
           dispatch(setError('Session expired. Please login again.'));
